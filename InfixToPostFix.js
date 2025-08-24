@@ -50,6 +50,6 @@ function infixToPostFix(str) {
     return res;
 }
 
-let str = 'a+b*(c^d-e)^(f+g*h)-i';
+let str = 'h^m^q^(7-4)';
 
 console.log(infixToPostFix(str));
