@@ -29,10 +29,10 @@ function isBalancedTreeNaive(root) {
 }
 
 /**
- * Efficient Solution :- O(n)
+ * Method - 2 Efficient Solution :- O(n)
  */
 
-function isBalancedTree(root) {
+function isBalancedTreeEfficient(root) {
     const checkBalanced = (root) => {
         if (!root) return { h: 0, isBalanced: true };
 
@@ -48,6 +48,31 @@ function isBalancedTree(root) {
         };
     };
     return checkBalanced(root).isBalanced;
+}
+
+/**
+ * Method - 3 Further Effective Solution instead of calculate two parameter height & isBalanced
+ * We can determine if subTree/ is not balance we will return -1 it mean its not balanced
+ *
+ *
+ * TC- O(n)
+ * AUX - O(h)
+ * Where h mean the height of tree which level of node present in the stack..
+ */
+
+function isBalancedTree(root) {
+    const checkTree = (root) => {
+        if (!root) return 0;
+
+        const lB = checkTree(root.left);
+        const rB = checkTree(root.right);
+
+        return lB >= 0 && rB >= 0 && Math.abs(lB - rB) <= 1
+            ? Math.max(lB, rB) + 1
+            : -1;
+    };
+
+    return checkTree(root) >= 0 ? true : false;
 }
 
 //Example for balanced tree..
