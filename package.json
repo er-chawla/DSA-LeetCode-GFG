@@ -1,0 +1,20 @@
+{
+    "name": "dsa-leetcode-gfg",
+    "version": "1.0.0",
+    "description": "Problem solution for DSA LeetCode/ GFG",
+    "homepage": "https://github.com/er-chawla/DSA-LeetCode-GFG#readme",
+    "bugs": {
+        "url": "https://github.com/er-chawla/DSA-LeetCode-GFG/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/er-chawla/DSA-LeetCode-GFG.git"
+    },
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "132Pattern.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
