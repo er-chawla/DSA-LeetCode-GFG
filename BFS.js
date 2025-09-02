@@ -76,7 +76,7 @@ function levelOrderTraversalPrintAtLine(root) {
 
 ///Method -2 TC O(n), AUX O(n)
 
-var levelOrder = function (root) {
+export function levelOrder(root) {
     let result = [];
     let qu = new Array();
     qu.push(root);
@@ -97,8 +97,8 @@ var levelOrder = function (root) {
         result.push(level);
     }
 
-    return result.reverse();
-};
+    return result;
+}
 
 // root = [3, 9, 20, null, null, 15, 7];
 //     3
@@ -112,4 +112,4 @@ root.right = new Node(20);
 root.right.left = new Node(15);
 root.right.right = new Node(7);
 
-console.log(levelOrder(root));
+// console.log(levelOrder(root));
