@@ -18,17 +18,20 @@ function TreeNode(val, left, right) {
  * @return {void} Do not return anything, modify root in-place instead.
  */
 var flatten = function (root) {
-    let dummyNode = new TreeNode(null);
-    let curr = dummyNode;
-    var preOrderTraversal = (root) => {
-        if (!root) return;
-        curr.right = new TreeNode(root.val);
-        curr = curr.right;
-        preOrderTraversal(root.left);
-        preOrderTraversal(root.right);
-    };
-    preOrderTraversal(root);
-    return dummyNode.right;
+    let curr = root;
+    while (curr) {
+        if (curr.left) {
+            let predecessor = curr.left;
+
+            while (predecessor.right && predecessor.right !== curr) {
+                predecessor = predecessor.right;
+            }
+
+            predecessor.right = curr.right;
+            curr.right = curr.left;
+            curr.left = null;
+        }
+    }
 };
 
 const root = new TreeNode(1);
